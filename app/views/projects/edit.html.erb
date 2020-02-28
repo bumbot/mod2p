@@ -1,17 +1,3 @@
 <h1>Edit <%= @project.name %></h1>
 
-<%= form_for @project do |u| %>
-    <div>
-    <%= u.label :name %>
-    <%= u.text_field :name %>
-    </div>
-    <div>
-    <%= u.label :github_url %>
-    <%= u.text_field :github_url %>
-    </div>
-    <div>
-    <%= u.label :description %>
-    <%= u.text_field :description %>
-    </div>
-    <%= u.submit %>
-<% end %>
+<%= render 'form' %>

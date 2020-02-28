@@ -1,0 +1,27 @@
+<ul>
+    <% if @project.errors.any? %>
+        <% @project.errors.full_messages.each do |msg| %>
+            <li>
+                <%= msg %>
+            </li>
+        <% end %>
+    <% end %>
+</ul>
+
+<%= form_for @project do |u| %>
+    <div>
+        <%= u.label :name %>
+        <%= u.text_field :name %>
+    </div>
+    <div>
+        <%= u.label :github_url %>
+        <%= u.text_field :github_url %>
+    </div>
+    <div>
+        <%= u.label :description %>
+        <%= u.text_field :description %>
+    </div>
+    <div>
+        <%= u.submit %>
+    </div>  
+<% end %>
