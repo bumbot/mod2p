@@ -1,0 +1,9 @@
+<h1><%= @post.title %></h1>
+
+<h2><%= link_to @post.user.name, user_path(@post.user)%></h2>
+
+<p><%= @post.content %></p>
+
+
+
+<%= link_to "Back to All Posts", posts_path %>

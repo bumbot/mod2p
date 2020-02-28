@@ -1,0 +1,16 @@
+<h1>Edit <%= @user.name %></h1>
+
+<%= form_for @user do |u| %>
+    <div>
+    <%= u.label :name %>
+    <%= u.text_field :name %>
+    </div>
+    <div>
+    <%= u.label :github_url %>
+    <%= u.text_field :github_url %>
+    </div>
+    <div>
+    <%= u.label :cohort_name %>
+    <%= u.text_field :cohort_name %>
+    </div>
+<% end %>

@@ -10,4 +10,6 @@ class User < ApplicationRecord
 
     # has_many :post_favorites
     # has_many :posts, through: :post_favorites
+
+    
 end

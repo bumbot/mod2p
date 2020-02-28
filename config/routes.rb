@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 
-  resources :users, only: [:index, :show]
-  # resources :posts, only: [:index, :show]
-  # resources :projects, only: [:index, :show]
+  resources :users, only: [:index, :show, :edit, :update]
+  resources :posts, only: [:index, :show, :edit, :update]
+  resources :projects, only: [:index, :show, :edit, :update]
 end
