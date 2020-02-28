@@ -1,5 +1,6 @@
 <ul>
     <% if @user.errors.any? %>
+        <h2>Please read the errors:</h2>
         <% @user.errors.full_messages.each do |msg| %>
         <li>
             <%= msg %>
