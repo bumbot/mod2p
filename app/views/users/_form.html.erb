@@ -1,0 +1,31 @@
+<ul>
+    <% if @user.errors.any? %>
+        <% @user.errors.full_messages.each do |msg| %>
+        <li>
+            <%= msg %>
+        </li>
+        <% end %>
+    <% end %>
+    </ul>
+    
+    <%= form_for @user do |u| %>
+        <div>
+            <%= u.label :name %>
+            <%= u.text_field :name %>
+        </div>
+        <div>
+            <%= u.label :github_profile, value="GitHub Profile" %>
+            <%= u.text_field :github_profile %>
+        </div>
+        <div>
+            <%= u.label :cohort_name, value="Cohort Name" %>
+            <%= u.text_field :cohort_name %>
+        </div>
+        <div>
+            <%= u.label :cohort_start, value="Cohort Start Date" %>
+            <%= u.date_field :cohort_start %>
+        </div>
+        <div>
+            <%= u.submit %>
+        </div>
+    <% end %>
