@@ -13,5 +13,9 @@
     <% end %>
 </ul>
 
-<%= link_to "Edit this project", edit_project_path %>
+<% @project.users.each do |user| %>
+    <% if user.id == session[:user_id] %>
+        <%= link_to "Edit this project", edit_project_path %>
+    <% end %>
+<% end %>
 <%= link_to "Back to All Projects", projects_path %>

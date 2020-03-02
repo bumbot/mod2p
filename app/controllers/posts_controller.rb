@@ -30,6 +30,7 @@ class PostsController < ApplicationController
     def update
         @post = Post.find(params[:id])
         @post.update(post_params)
+        @post.user_id = session[:user_id]
         if @post.valid?
             redirect_to post_path(@post)
         else

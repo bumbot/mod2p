@@ -4,6 +4,12 @@
 
 <p><%= @post.content %></p>
 
-
-<%= link_to "Edit this post", edit_post_path %>
-<%= link_to "Back to All Posts", posts_path %>
+<% if @post.user.id == session[:user_id] %>
+    <button><%= link_to "Edit this post", edit_post_path %></button>
+<% end %>
+<div>
+    <%= link_to "Back to All Posts", posts_path %>
+</div>
+<div>
+    <%= link_to "Return to homepage", homepage_path %>
+</div>

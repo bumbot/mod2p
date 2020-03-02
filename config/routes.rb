@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#logout"
+  get "/analytics", to: "application#analytics", as: "analytics"
   resources :users, only: [:index, :show, :edit, :update, :new, :create]
   resources :posts, only: [:index, :show, :edit, :update, :new, :create]
   resources :projects, only: [:index, :show, :edit, :update, :new, :create]
