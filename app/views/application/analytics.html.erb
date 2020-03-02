@@ -1,6 +1,20 @@
 <h1>Website Analytics</h1>
 
-<h2> Users: </h2>
-<p>Number of Users: <%= User.all.count %></p>
+<div>
+    <h2> Users: </h2>
+        <p>Number of Users: <%= User.all.count %></p>
+        <%= link_to "View all Users", users_path %>
+</div>
+<div>
+    <h2> Posts: </h2>
+        <p>Numerb of Posts: <%= Post.all.count %></p>
+        <%= link_to "View all Posts", posts_path %>
+</div>
+<div>
+    <h2> Projects: </h2>
+        <p>Number of Projects: <%= Project.all.count %></p>
+        <%= link_to "View all Projects", projects_path %>
+</div>
 
-<%= link_to "Return to homepage", homepage_path %>
+<br>
+<div><%= link_to "Return to homepage", homepage_path %></div>
