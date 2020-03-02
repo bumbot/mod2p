@@ -11,6 +11,15 @@
         <% end %>
     </ol>
 
+<h3>Number of Projects collaborated on: <%= @user.projects.length %></h3>
+    <ol>
+        <%  @user.projects.each do |project| %>
+        <li>
+            <%= link_to project.name, project_path(project) %>
+        </li>
+        <% end %>
+    </ol>
+
 
 
 <%= link_to "Back to User Index", users_path %>
