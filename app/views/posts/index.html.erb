@@ -5,5 +5,7 @@
     <% end %>
 </ul>
 
-<%= link_to "Create a new post", new_post_path %>
-<%= link_to "Return to homepage", homepage_path %>
+<% if session[:user_id] %> 
+    <%= link_to "Create a new post", new_post_path %>
+<% end %>
+<div><%= link_to "Return to homepage", homepage_path %></div>
