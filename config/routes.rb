@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :show, :edit, :update, :new, :create]
   resources :projects, only: [:index, :show, :edit, :update, :new, :create]
   resources :post_favorites, only: [:create]
+  resources :project_favorites, only: [:create]
 end

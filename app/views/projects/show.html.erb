@@ -13,6 +13,9 @@
     <% end %>
 </ul>
 
+<td><%= button_to 'Favorite this Project', {:controller => "project_favorites", :action => "create", :project_id => @project.id} , :method=>:post  %></td>
+
+
 <% @project.users.each do |user| %>
     <% if user.id == session[:user_id] %>
         <%= link_to "Edit this project", edit_project_path %>
