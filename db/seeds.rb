@@ -13,11 +13,11 @@ UserProject.destroy_all
 PostFavorite.destroy_all
 ProjectFavorite.destroy_all
 
-ann = User.create(name: "Ann", github_profile: "https://github.com/", cohort_name: "Live fast pry young", cohort_start: Date.today, username: "annduong")
-carl = User.create(name: "Carl", github_profile: "https://github.com/cjp34", cohort_name: "Live fast pry young", cohort_start: Date.today, username: "carlparm")
-paul = User.create(name: "Paul", github_profile: "https://github.com/bumbot", cohort_name: "Live fast pry young", cohort_start: Date.today, username: "paulkim")
-matteo = User.create(name: "Matteo", github_profile: "https://github.com/matteoaricci", cohort_name: "Live fast pry young", cohort_start: Date.today, username: "matteoricci")
-bri = User.create(name: "Bri", github_profile: "https://github.com/briannalturner", cohort_name: "Live fast pry young", cohort_start: Date.today, username: "briturner")
+ann = User.create(name: "Ann", github_profile: "https://github.com/", cohort_name: "Live fast pry young", cohort_start: Date.today, username: "annduong", password: "annduong")
+carl = User.create(name: "Carl", github_profile: "https://github.com/cjp34", cohort_name: "Live fast pry young", cohort_start: Date.today, username: "carlparm", password: "carlparm")
+paul = User.create(name: "Paul", github_profile: "https://github.com/bumbot", cohort_name: "Live fast pry young", cohort_start: Date.today, username: "paulkim", password: "paulkim")
+matteo = User.create(name: "Matteo", github_profile: "https://github.com/matteoaricci", cohort_name: "Live fast pry young", cohort_start: Date.today, username: "matteoricci", password: "matteoricci")
+bri = User.create(name: "Bri", github_profile: "https://github.com/briannalturner", cohort_name: "Live fast pry young", cohort_start: Date.today, username: "briturner", password: "briturner")
 
 post1 = Post.create(title: "Post 1", user_id: carl.id, content: "This is test content")
 post2 = Post.create(title: "Post 2", user_id: carl.id, content: "This is test content")

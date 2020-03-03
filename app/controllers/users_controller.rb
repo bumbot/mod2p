@@ -40,6 +40,6 @@ class UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:name, :github_profile, :cohort_name, :cohort_start, :username)
+        params.require(:user).permit(:name, :github_profile, :cohort_name, :cohort_start, :username, :password)
     end
 end

@@ -5,7 +5,11 @@
 <%= form_tag login_path do %>
     <%= label_tag :username %>
     <%= text_field_tag :username %>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
     <%= submit_tag "Login" %>
 <% end %>
 
+<%= link_to "Create a New User", new_user_path %>
+<br>
 <%= link_to "Return to homepage", homepage_path %>
