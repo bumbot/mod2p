@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show, :edit, :update, :new, :create]
   resources :posts, only: [:index, :show, :edit, :update, :new, :create]
   resources :projects, only: [:index, :show, :edit, :update, :new, :create]
+  resources :post_favorites, only: [:create]
 end

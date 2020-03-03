@@ -4,6 +4,10 @@
 
 <p><%= @post.content %></p>
 
+
+<td><%= button_to 'Favorite this Post', {:controller => "post_favorites", :action => "create", :post_id => @post.id} , :method=>:post  %></td>
+
+
 <% if @post.user.id == session[:user_id] %>
     <button><%= link_to "Edit this post", edit_post_path %></button>
 <% end %>
