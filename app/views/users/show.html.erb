@@ -4,9 +4,10 @@
 <h2>GitHub Profile: <%= @user.github_profile %></h2>
 <h2>Flatiron Cohort Name: <%= @user.cohort_name %></h2>
 <h2>Cohort Start Date: <%= @user.cohort_start %></h2>
-<h3>Number of Posts Authored: <%= @user.posts.length %></h3>
+
+<h3>Number of Posts Authored: <%= @user_posts.length %></h3>
     <ol>
-        <% @user.posts.each do |post| %>
+        <% @user_posts.each do |post| %>
             <li><%= link_to post.title, post_path(post) %></li>
         <% end %>
     </ol>

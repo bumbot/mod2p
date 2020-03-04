@@ -16,4 +16,9 @@ class User < ApplicationRecord
     validates :github_profile, presence: true
     validates :cohort_name, presence: true
     validates :cohort_start, presence: true
+
+    def user_posts
+        self.posts
+    end
+
 end
