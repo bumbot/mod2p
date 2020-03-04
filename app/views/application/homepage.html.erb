@@ -1,30 +1,54 @@
-<head>
-    <link rel="stylesheet" type="text/css" href="homepage.scss">
-    <title>Homepage</title>
-</head>
+<%= stylesheet_link_tag "homepage" %>
 
-<body>
-    <h1>Welcome!</h1>
+<body>    
+    <div id="menu-bar" class="ui inverted vertical pointing menu">
+        <a class="browse item">
+            Menu
+            <i class="dropdown icon"></i>
+        </a>
+    </div> 
+    <div id="menu-bar" class="ui fluid popup bottom left transition hidden">
+        <div class="ui six column relaxed equal height divided grid">
+            <div class="column">
+                <h4>Homepage</h4>
+                <div class="ui link list"><%= link_to "Homepage", homepage_path, class: "item" %></div>
+            </div>
+            <div class="column">
+                <h4 class="ui header">Account</h4>
+                 <div class="ui link list">                 
+                    <% if !session[:user_id] %>
+                        <%= link_to "Login", sessions_new_path, class: "item" %>
+                        <%= link_to "Sign Up", new_user_path, class: "item" %>
+                    <% end %>
 
-    <div class="dropdown">
-        <button class="dropbtn">Navigate</button>
-        <div class="dropdown-content">
-        <%= link_to "View Posts", posts_path %>
-        <%= link_to "View Projects", projects_path %>
-        <%= link_to "View Users", users_path %>
-        <%= link_to "View Website analytics", analytics_path %>
+                    <% if session[:user_id] %>
+                        <%= link_to "Logout", logout_path, class: "item" %>
+                    <% end %>
+                </div>
+            </div>
+            <div class="column">
+                <h4 class="ui header">Posts</h4>
+                <div class="ui link list"><%= link_to "View Posts", posts_path, class: "item" %></div>
+            </div>
+            <div class="column">
+                <h4 class="ui header">Projects</h4>
+                <div class="ui link list">
+                    <%= link_to "View Projects", projects_path, class: "item" %>
+                </div>
+            </div>
+            <div class="column">
+                <h4 class="ui header">Users</h4>
+                <div class="ui link list"><%= link_to "View Users", users_path, class: "item" %></div>
+            </div>
+            <div class="column">
+                <h4 class="ui header">Analytics</h4>
+                <div class="ui link list"><%= link_to "View Website analytics", analytics_path, class: "item" %></div>
+            </div>
         </div>
     </div>
 
-<br>
-<% if !session[:user_id] %>
-    <%= link_to "Login", sessions_new_path %>
-    <br>
-    <%= link_to "Create a New User", new_user_path %>
-<% end %>
+    <div class="intro">
+        <h1>Welcome!</h1>
+    </div>
 
-<br>
-<% if session[:user_id] %>
-    <%= link_to "Logout", logout_path %>
-<% end %>
-
+    </body>

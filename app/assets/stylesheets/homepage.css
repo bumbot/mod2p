@@ -1,0 +1,29 @@
+body {
+    background-image: url('homepage-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    margin: auto;
+    text-align: center;
+    font-size: 50px;
+    font-family: Verdana, Tahoma, sans-serif;
+}
+
+
+
+/* .intro {
+     background-image: url('blue-lattice-pattern.png');
+ } */
+
+
+
+/*
+    sidebar menu
+*/
+
+#menu-bar {
+    margin-left: 10px;
+    margin-top: 20px;
+}
