@@ -20,6 +20,26 @@
         <% end %>
     </ol>
 
+<h3>Favorited Posts: <%= @user.post_favorites.count %></h3>
+    <ol>
+        <% arr = [] %> 
+        <% @user.post_favorites.each do |fav| %>
+        <li>
+            <%= fav.post.title %>
+        </li>
+        <% end %>
+    </ol>
+
+
+<h3>Favorited Projects: <%= @user.project_favorites.length %></h3>
+    <ol>
+        <% @user.project_favorites.each do |fav| %>
+        <li>
+            <%= fav.project.name %>
+        </li>
+        <% end %>
+    </ol>
+
 
 
 <%= link_to "Back to User Index", users_path %>

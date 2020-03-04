@@ -13,8 +13,14 @@
     <% end %>
 </ul>
 
-<td><%= button_to 'Favorite this Project', {:controller => "project_favorites", :action => "create", :project_id => @project.id} , :method=>:post  %></td>
-
+<% if session[:user_id] %>
+    <% fav = @project.project_favorites.find_by(user_id: session[:user_id], project_id: @project.id) %>
+        <% if fav %>
+           <td><%= button_to 'Unfavorite this Project', {:controller => "project_favorites", :action => "destroy", :project_id => @project.id} , :method=>:delete %></td>      
+        <% else %>
+            <td><%= button_to 'Favorite this Project', {:controller => "project_favorites", :action => "create", :project_id => @project.id} , :method=>:post  %></td>
+        <% end %>
+<% end %>
 
 <% @project.users.each do |user| %>
     <% if user.id == session[:user_id] %>
