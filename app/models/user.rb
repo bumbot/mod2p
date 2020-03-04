@@ -39,5 +39,21 @@ class User < ApplicationRecord
         arr[0]
     end
 
+    def self.most_posts
+        hash = {}
+        User.all.each do |user|
+            hash[user] = user.posts.count
+        end
+        arr = hash.max_by{|k,v| v}
+        arr[0]
+    end
 
+    def self.most_projects
+        hash = {}
+        User.all.each do |user|
+            hash[user] = user.projects.count
+        end
+        arr = hash.max_by{|k,v| v}
+        arr[0]
+    end
 end
