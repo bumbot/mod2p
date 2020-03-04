@@ -1,87 +1,10 @@
 <%= stylesheet_link_tag "homepage" %>
 
-<body>    
-    <!-- <div id="menu-bar" class="ui inverted vertical pointing menu">
-        <a class="browse item">
-            Menu
-            <i class="dropdown icon"></i>
-        </a>
-    </div> 
-    <div id="menu-bar" class="ui fluid popup bottom left transition hidden">
-        <div class="ui six column relaxed equal height divided grid">
-            <div class="column">
-                <h4 class="ui header">Homepage</h4>
-                <div class="ui link list"><%= link_to "Homepage", homepage_path, class: "ui item" %></div>
-            </div>
-            <div class="column">
-                <h4 class="ui header">Account</h4>
-                 <div class="ui link list">                 
-                    <% if !session[:user_id] %>
-                        <%= link_to "Login", sessions_new_path, class: "ui item" %>
-                        <%= link_to "Sign Up", new_user_path, class: "ui item" %>
-                    <% end %>
+<body>
 
-                    <% if session[:user_id] %>
-                        <%= link_to "Logout", logout_path, class: "ui item" %>
-                    <% end %>
-                </div>
-            </div>
-            <div class="column">
-                <h4 class="ui header">Posts</h4>
-                <div class="ui link list"><%= link_to "View Posts", posts_path, class: "ui item" %></div>
-            </div>
-            <div class="column">
-                <h4 class="ui header">Projects</h4>
-                <div class="ui link list">
-                    <%= link_to "View Projects", projects_path, class: "ui item" %>
-                </div>
-            </div>
-            <div class="column">
-                <h4 class="ui header">Users</h4>
-                <div class="ui link list"><%= link_to "View Users", users_path, class: "ui item" %></div>
-            </div>
-            <div class="column">
-                <h4 class="ui header">Analytics</h4>
-                <div class="ui link list"><%= link_to "View Website analytics", analytics_path, class: "ui item" %></div>
-            </div>
-        </div>
-    </div> -->
+    <%= render "menu" %>
 
-    <div id="menu-bar" class="ui inverted compact menu">
-        <div class="ui inverted simple dropdown item">
-          Menu
-          <i class="dropdown icon"></i>
-          <div class="menu">
-            <div class="item">
-                <%= link_to "Homepage", homepage_path, class: "item" %>
-            </div>
-            <div class="item">
-                <% if !session[:user_id] %>
-                    <%= link_to "Login", sessions_new_path, class: "item" %>
-                    <%= link_to "Sign Up", new_user_path, class: "item" %>
-                <% end %>
-
-                <% if session[:user_id] %>
-                    <%= link_to "Logout", logout_path, class: "item" %>
-                <% end %>
-            </div>
-            <div class="item">
-                <%= link_to "View Posts", posts_path, class: "item" %>
-            </div>
-            <div class="item">
-                <%= link_to "View Projects", projects_path, class: "item" %>
-            </div>
-            <div class="item">
-                <%= link_to "View Users", users_path, class: "item" %>
-            </div>
-            <div class="item">
-                <%= link_to "View Website analytics", analytics_path, class: "item" %>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <div class="intro">
+    <div id="intro">
         <h1>Welcome!</h1>
     </div>
 

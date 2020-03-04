@@ -1,3 +1,6 @@
+<%= stylesheet_link_tag "homepage" %>
+<%= render 'application/menu' %>
+
 <h1><%= @post.title %></h1>
 
 <h2><%= link_to @post.user.name, user_path(@post.user)%></h2>

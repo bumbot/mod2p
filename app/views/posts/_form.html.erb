@@ -1,3 +1,6 @@
+<%= stylesheet_link_tag "homepage" %>
+<%= render 'application/menu' %>
+
 <ul>
     <% if @post.errors.any? %>
         <% @post.errors.full_messages.each do |msg| %>
