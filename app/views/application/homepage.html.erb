@@ -16,10 +16,15 @@
         </div>
     </div>
 
-
-    <br>
+<br>
+<% if !session[:user_id] %>
     <%= link_to "Login", sessions_new_path %>
     <br>
+    <%= link_to "Create a New User", new_user_path %>
+<% end %>
+
+<br>
+<% if session[:user_id] %>
     <%= link_to "Logout", logout_path %>
-</body>
+<% end %>
 
