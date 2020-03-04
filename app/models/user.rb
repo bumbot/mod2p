@@ -21,4 +21,23 @@ class User < ApplicationRecord
         self.posts
     end
 
+    def most_favorited_post
+        hash = {}
+        self.posts.each do |post|
+            hash[post.title] = post.post_favorites.count
+        end
+        arr = hash.max_by{|k,v| v}
+        arr[0]
+    end
+
+    def most_favorited_project
+        hash = {}
+        self.projects.each do |proj|
+            hash[proj.name] = proj.project_favorites.count
+        end
+        arr = hash.max_by{|k,v| v}
+        arr[0]
+    end
+
+
 end
