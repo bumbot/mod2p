@@ -8,11 +8,18 @@
 <div>
     <h2> Posts: </h2>
         <p>Numerb of Posts: <%= Post.all.count %></p>
+        <p>User with the most posts: <%= link_to User.most_posts.name, user_path(User.most_posts) %></p>
+        <p>Most favorited post: <%= link_to Post.most_favorited.title, post_path(Post.most_favorited) %></p>
+        <p>Total likes: <%= Post.total_favorites %></p>
         <%= link_to "View all Posts", posts_path %>
 </div>
 <div>
     <h2> Projects: </h2>
         <p>Number of Projects: <%= Project.all.count %></p>
+        <p>User with the most projects: <%= link_to User.most_projects.name, user_path(User.most_projects) %></p>
+        <p>Most favorited project: <%= link_to Project.most_favorited.name, post_path(Project.most_favorited) %></p>
+        <p>Total likes: <%= Project.total_favorites %></p>
+
         <%= link_to "View all Projects", projects_path %>
 </div>
 
