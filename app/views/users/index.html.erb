@@ -1,18 +1,16 @@
-<%= stylesheet_link_tag "homepage" %>
+<%= stylesheet_link_tag "indexpage" %>
 <%= render 'application/menu' %>
 
 <h1>List of All Users:</h1>
 
-<ul>
+<div id="user-name" class="ui inverted animated link list">
 <% @users.each do |user| %>
-    <li><%= link_to user.name, user_path(user) %></li>
+    <%= link_to user.name, user_path(user), class: "item" %>
 <% end %>
-</ul>
+</div>
 
-<% if !session[:user_id] %>
-    <%= link_to "Create a New User", new_user_path %>
-<% end %>
-
-<div>
-    <%= link_to "Return to homepage", homepage_path %>
+<div id="user-name">
+    <% if !session[:user_id] %>
+        <%= link_to "Create a New User", new_user_path %>
+    <% end %>
 </div>

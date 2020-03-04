@@ -1,0 +1,14 @@
+body {
+    background-image: url('users-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1 {
+    color: lightsteelblue;
+}
+
+#user-name {
+    text-indent: 15%;
+}

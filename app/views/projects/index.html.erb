@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag "homepage" %>
+<%= stylesheet_link_tag "indexpage" %>
 <%= render 'application/menu' %>
 
 <h1>List of All Projects:</h1>
@@ -13,6 +13,3 @@
 <% if session[:user_id] %>
     <%= link_to "Create a new Project", new_project_path %>
 <% end %>
-<div>
-    <%= link_to "Return to homepage", homepage_path %>
-</div>
