@@ -11,11 +11,6 @@ h1 {
     font-family: Verdana, Tahoma, sans-serif;
 }
 
-iframe {
-    border: solid 2px black;
-    border-radius: 8px;
-}
-
 
 
 /*
@@ -26,6 +21,7 @@ iframe {
     margin-left: 10px;
     margin-top: 10px;
     position: fixed;
+    z-index: 10;
 }
 
 /*
@@ -34,6 +30,7 @@ iframe {
 
 button {
     padding-left: 21px;
+    display: block;
 }
 
 #user-info {
@@ -42,14 +39,15 @@ button {
     margin-top: 10px;
 }
 
-button {
-    display: block;
-}
 
 /*
     panels
  */
 
 #panels {
-    margin-top: 20px;
+    margin-top: 30px;
+}
+
+.ui.sub.header {
+    font-weight: 200%;
 }

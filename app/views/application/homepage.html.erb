@@ -1,19 +1,41 @@
 <%= stylesheet_link_tag "homepage" %>
 
-<body>
-
     <%= render "menu" %>
 
     <div id="intro">
         <h1>Welcome!</h1>
     </div>
 
-    <div class="ui grid" id="panels">
-        <% 4.times do %>
-        <div class="four wide column">
-            <iframe src="/users/<%=User.all.sample.id%>">Click this</iframe>
-         </div>
-        <% end %>
-    </div>
-
-</body>
+    <!-- profile card of 4 random users -->
+<div class="ui grid">
+    <% 4.times do %>
+            <div class="ui centered four card" id="panels">
+                <% profile = User.all.sample %>
+                <div class="content">
+                <div class="header"><%= profile.name %></div>
+                </div>
+                <div class="content">
+                <h4 class="ui sub header">User Info</h4>
+                <div class="ui small feed">
+                    <div class="event">
+                    <div class="content">
+                        <div class="summary">
+                        Number of Posts authored: <%= profile.posts.length %>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="event">
+                    <div class="content">
+                        <div class="summary">
+                        Number of Projects collaborated on: <%= profile.projects.length %>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <div class="extra content">
+                <%= link_to "View Profile", user_path(profile), class: "ui button" %>
+                </div>
+            </div>
+    <% end %>
+</div>
