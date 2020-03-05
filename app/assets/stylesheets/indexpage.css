@@ -6,9 +6,19 @@ body {
 }
 
 h1 {
-    color: lightsteelblue;
+    color: lightcyan;
 }
 
-#user-name {
+#user-name a{
+    font-size: 150%;
+    color: blue;
     text-indent: 15%;
+    font-weight: 300;
 }
+
+#create {
+    padding-top: 5%;
+    text-align: right;
+
+}
+

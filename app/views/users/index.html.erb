@@ -3,13 +3,13 @@
 
 <h1>List of All Users:</h1>
 
-<div id="user-name" class="ui inverted animated link list">
-<% @users.each do |user| %>
-    <%= link_to user.name, user_path(user), class: "item" %>
-<% end %>
+<div class="ui inverted animated link list" id="user-name">
+    <% @users.each do |user| %>
+        <%= link_to user.name, user_path(user), class: "item" %>
+    <% end %>
 </div>
 
-<div id="user-name">
+<div id="create">
     <% if !session[:user_id] %>
         <%= link_to "Create a New User", new_user_path %>
     <% end %>

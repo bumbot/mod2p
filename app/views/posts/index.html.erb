@@ -2,12 +2,15 @@
 <%= render 'application/menu' %>
 
 <h1>All Posts Written:</h1>
-<ul>
-    <% @posts.each do |post| %>
-       <li><%= link_to post.title, post_path(post) %></li>
-    <% end %>
-</ul>
 
-<% if session[:user_id] %> 
-    <%= link_to "Create a new post", new_post_path %>
-<% end %>
+<div class="ui inverted animated link list" id="user-name">
+    <% @posts.each do |post| %>
+       <%= link_to post.title, post_path(post), class: "item" %>
+    <% end %>
+</div>
+
+<div id="create">
+    <% if !session[:user_id] %> 
+        <%= link_to "Create a new post", new_post_path %>
+    <% end %>
+</div>

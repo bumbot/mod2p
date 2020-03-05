@@ -1,0 +1,10 @@
+body {
+    background-image: url('alan-wow.gif');
+    background-size: contain;
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.labels {
+    color: white
+}
