@@ -1,27 +1,33 @@
-<ul>
+<ul class="labels errors">
     <% if @project.errors.any? %>
+    <div class="ui list"></div>
         <% @project.errors.full_messages.each do |msg| %>
-            <li>
-                <%= msg %>
-            </li>
+        <div class="item">
+            <div class="content">
+                
+                <div class="header">
+                    <i class="fas fa-exclamation-triangle"></i>    
+                    <%= msg %>
+                </div>
+            </div>
+        </div>
         <% end %>
+    </div>
     <% end %>
 </ul>
 
-<%= form_for @project do |u| %>
-    <div>
+<div class="labels">
+    <%= form_for @project do |u| %>
         <%= u.label :name %>
         <%= u.text_field :name %>
-    </div>
-    <div>
+        <div>
         <%= u.label :github_url %>
         <%= u.text_field :github_url %>
-    </div>
-    <div>
+        </div>
+        <div>
         <%= u.label :description %>
         <%= u.text_field :description %>
-    </div>
-    <div>
+        </div>
         <%= u.submit %>
-    </div>  
-<% end %>
+    <% end %>
+</div>

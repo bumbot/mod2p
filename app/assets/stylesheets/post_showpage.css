@@ -1,0 +1,28 @@
+body {
+    background-image: url('flatiron.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1, h2 {
+    text-align: center !important;
+}
+
+p {
+    text-indent: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
+    border: solid 3px black;
+    border-style: groove;
+    border-radius: 8px;
+    padding: 10px 20px 10px 20px;
+    color: rgb(225, 215, 189);
+    font-size: 150%;
+}
+
+.button {
+    text-align: right;
+    margin-top: -10px;
+    margin-right: 20%;
+}

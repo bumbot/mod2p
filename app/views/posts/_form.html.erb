@@ -1,26 +1,29 @@
-<ul>
+<ul class="labels errors">
     <% if @post.errors.any? %>
+    <div class="ui list"></div>
         <% @post.errors.full_messages.each do |msg| %>
-        <li>       
-            <%= msg %>
-        </li>
+        <div class="item">
+            <div class="content">
+                <div class="header">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <%= msg %>
+                </div>
+            </div>
+        </div>
         <% end %>
+    </div>
     <% end %>
 </ul>
 
-
-<%= form_for @post do |u| %>
-    <div>
+<div class="labels">
+    <%= form_for @post do |u| %>
         <%= u.label :title %>
         <%= u.text_field :title %>
-    </div>
-    <div>
+        <div>
         <%= u.label :content %>
         <%= u.text_field :content %>
-    </div>
-    <div>
+        </div>
         <%= u.submit %>
-    </div>  
-<% end %>
+    <% end %>
+</div>
 
-<%= link_to "Return to homepage", homepage_path %>

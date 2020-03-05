@@ -37,9 +37,15 @@
     <% end %>
 
     <% if session[:user_id] %>
+    <div class="ui vertical buttons">
+        <button class="ui labeled right floated icon button">
+            <i class="fas fa-user"></i>
+            Hello <%= current_user.name %>
+        </button>
         <button class="ui labeled right floated icon button">
             <i class="fas fa-sign-out-alt"></i>
             <%= link_to "Logout", logout_path, class: "item" %>
         </button>
+    </div>
     <% end %>
 </div>
