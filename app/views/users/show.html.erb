@@ -34,15 +34,19 @@
     </ol>
 <% end %>
 
+
 <h3>Favorited Posts: <%= @user.post_favorites.count %></h3>
     <ol>
+    <%# <% if @user.post_favorites != nil %>
         <% arr = [] %> 
         <% @user.post_favorites.each do |fav| %>
         <li>
             <%= fav.post.title %>
         </li>
         <% end %>
+    <%# <% end %>
     </ol>
+
 
 
 <h3>Favorited Projects: <%= @user.project_favorites.length %></h3>

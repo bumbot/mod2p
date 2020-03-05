@@ -19,7 +19,11 @@ class Post < ApplicationRecord
             hash[post] = post.post_favorites.count
         end
         arr = hash.max_by{|k,v| v}
-        arr[0]
+        if !arr.nil?
+            arr[0]
+        else
+            nil
+        end
     end
 
 end

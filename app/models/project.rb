@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-    has_many :user_projects
+    has_many :user_projects, dependent: :destroy
     has_many :users, through: :user_projects
     has_many :project_favorites, dependent: :destroy
     validates :name, presence: true
@@ -23,7 +23,11 @@ class Project < ApplicationRecord
             hash[proj] = proj.project_favorites.count
         end
         arr = hash.max_by{|k,v| v}
-        arr[0]
+        if !arr.nil?
+            arr[0]
+        else
+            nil
+        end
     end
 
 end
