@@ -8,4 +8,12 @@
         <h1>Welcome!</h1>
     </div>
 
+    <div class="ui grid" id="panels">
+        <% 4.times do %>
+        <div class="four wide column">
+            <iframe src="/users/<%=User.all.sample.id%>">Click this</iframe>
+         </div>
+        <% end %>
+    </div>
+
 </body>
