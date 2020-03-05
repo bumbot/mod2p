@@ -17,7 +17,8 @@ p {
     border-style: groove;
     border-radius: 8px;
     padding: 10px 20px 10px 20px;
-    color: rgb(225, 215, 189);
+    color: white;
+    text-shadow: 2px 2px black;
     font-size: 150%;
 }
 

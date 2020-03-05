@@ -1,0 +1,24 @@
+body {
+    background-image: url('user-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.booty {
+    font-size: 150%;
+    /* text-indent: 200px; */
+    padding-left: 10%;
+}
+
+.ol-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 40%;
+}
+
+.li-box {
+    width: 400px;
+    padding-left: 20px;
+}

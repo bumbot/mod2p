@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag "homepage" %>
+<%= stylesheet_link_tag "user_showpage" %>
 <%= render 'application/menu' %>
 
 <h1><%= @user.name %>'s Profile</h1>
@@ -8,61 +8,63 @@
 <h2>Flatiron Cohort Name: <%= @user.cohort_name %></h2>
 <h2>Cohort Start Date: <%= @user.cohort_start %></h2>
 
-<h3>Number of Posts Authored: <%= @user_posts.length %></h3>
+<div class="booty">
+    <h3>Number of Posts Authored: <%= @user_posts.length %></h3>
 
 
-<% if !@user.most_favorited_post.nil? %>
+    <% if !@user.most_favorited_post.nil? %>
 
-<h4>Most favorited post authored: <%= @user.most_favorited_post %></h4>
-    <ol>
-        <% @user_posts.each do |post| %>
-            <li><%= link_to post.title, post_path(post) %></li>
-        <% end %>
-    </ol>
-<% end %>
+    <h4>Most favorited post authored: <%= @user.most_favorited_post %></h4>
+        <ol class="ol-box">
+            <% @user_posts.each do |post| %>
+                <li class="li-box"><%= link_to post.title, post_path(post) %></li>
+            <% end %>
+        </ol>
+    <% end %>
 
-<h3>Number of Projects collaborated on: <%= @user.projects.length %></h3>
+    <h3>Number of Projects collaborated on: <%= @user.projects.length %></h3>
 
-<% if !@user.most_favorited_project.nil? %>
-    <h4>Most favorited project collaborated on: <%= @user.most_favorited_project %></h4>
-    <ol>
-        <%  @user.projects.each do |project| %>
-        <li>
-            <%= link_to project.name, project_path(project) %>
-        </li>
-        <% end %>
-    </ol>
-<% end %>
-
-
-<h3>Favorited Posts: <%= @user.post_favorites.count %></h3>
-    <ol>
-    <%# <% if @user.post_favorites != nil %>
-        <% arr = [] %> 
-        <% @user.post_favorites.each do |fav| %>
-        <li>
-            <%= fav.post.title %>
-        </li>
-        <% end %>
-    <%# <% end %>
-    </ol>
+    <% if !@user.most_favorited_project.nil? %>
+        <h4>Most favorited project collaborated on: <%= @user.most_favorited_project %></h4>
+        <ol class="ol-box">
+            <%  @user.projects.each do |project| %>
+            <li class="li-box">
+                <%= link_to project.name, project_path(project) %>
+            </li>
+            <% end %>
+        </ol>
+    <% end %>
 
 
+    <h3>Favorited Posts: <%= @user.post_favorites.count %></h3>
+        <ol class="ol-box">
+        <%# <% if @user.post_favorites != nil %>
+            <% arr = [] %> 
+            <% @user.post_favorites.each do |fav| %>
+            <li class="li-box">
+                <%= fav.post.title %>
+            </li>
+            <% end %>
+        <%# <% end %>
+        </ol>
 
-<h3>Favorited Projects: <%= @user.project_favorites.length %></h3>
-    <ol>
-        <% @user.project_favorites.each do |fav| %>
-        <li>
-            <%= fav.project.name %>
-        </li>
-        <% end %>
-    </ol>
 
 
-<br>
+    <h3>Favorited Projects: <%= @user.project_favorites.length %></h3>
+        <ol class="ol-box">
+            <% @user.project_favorites.each do |fav| %>
+            <li class="li-box">
+                <%= fav.project.name %>
+            </li>
+            <% end %>
+        </ol>
 
-<%= link_to "Back to User Index", users_path %>
-<br>
-<% if @user.id == session[:user_id] %>
-    <%= link_to "Edit this User", edit_user_path(@user) %>
-<% end %>
+
+    <br>
+
+    <%= link_to "Back to User Index", users_path %>
+    <br>
+    <% if @user.id == session[:user_id] %>
+        <%= link_to "Edit this User", edit_user_path(@user) %>
+    <% end %>
+</div>
