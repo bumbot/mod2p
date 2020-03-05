@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+
+    before_action :check_collabortors, only: [:index]
+
     def index
         @projects = Project.all
     end
@@ -48,5 +51,15 @@ class ProjectsController < ApplicationController
     def project_params
         params.require(:project).permit(:name, :github_url, :description) 
     end
+
+    def check_collabortors
+        Project.all.each do |project|
+            if project.users.count == 0
+                project.delete
+            end
+        end
+    end
+
+
 
 end
