@@ -40,7 +40,7 @@
     <div class="ui vertical buttons">
         <button class="ui labeled right floated icon button">
             <i class="fas fa-user"></i>
-            Hello <%= current_user.name %>
+            <%= link_to "Hello #{current_user.name}!", user_path(current_user), class: "item" %>
         </button>
         <button class="ui labeled right floated icon button">
             <i class="fas fa-sign-out-alt"></i>
