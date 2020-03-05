@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#logout"
   get "/analytics", to: "application#analytics", as: "analytics"
-  resources :users, only: [:index, :show, :edit, :update, :new, :create]
-  resources :posts, only: [:index, :show, :edit, :update, :new, :create]
-  resources :projects, only: [:index, :show, :edit, :update, :new, :create]
+  resources :users, only: [:index, :show, :edit, :update, :new, :create, :destroy]
+  resources :posts, only: [:index, :show, :edit, :update, :new, :create, :destroy]
+  resources :projects, only: [:index, :show, :edit, :update, :new, :create, :destroy]
   resources :post_favorites, only: [:create, :destroy]
   resources :project_favorites, only: [:create, :destroy]
 end

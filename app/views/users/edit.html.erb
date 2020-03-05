@@ -4,3 +4,7 @@
 <h1>Edit User</h1>
 
 <%= render 'form' %>
+
+<%= form_tag user_path(@user), method: :delete do %>
+    <%= submit_tag "Delete" %>
+<% end %>
