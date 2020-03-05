@@ -6,5 +6,19 @@ body {
 }
 
 .labels {
-    color: white
+    color: white;
+    text-indent: 10%;
 }
+
+.errors {
+    font-weight: bold;
+    font-size: 150% !important;
+    text-indent: 25% !important;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+

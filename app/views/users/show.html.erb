@@ -9,14 +9,21 @@
 <h2>Cohort Start Date: <%= @user.cohort_start %></h2>
 
 <h3>Number of Posts Authored: <%= @user_posts.length %></h3>
+
+
+<% if !@user.most_favorited_post.nil? %>
+
 <h4>Most favorited post authored: <%= @user.most_favorited_post %></h4>
     <ol>
         <% @user_posts.each do |post| %>
             <li><%= link_to post.title, post_path(post) %></li>
         <% end %>
     </ol>
+<% end %>
 
 <h3>Number of Projects collaborated on: <%= @user.projects.length %></h3>
+
+<% if !@user.most_favorited_project.nil? %>
     <h4>Most favorited project collaborated on: <%= @user.most_favorited_project %></h4>
     <ol>
         <%  @user.projects.each do |project| %>
@@ -25,6 +32,7 @@
         </li>
         <% end %>
     </ol>
+<% end %>
 
 <h3>Favorited Posts: <%= @user.post_favorites.count %></h3>
     <ol>

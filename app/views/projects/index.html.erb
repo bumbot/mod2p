@@ -3,14 +3,14 @@
 
 <h1>List of All Projects:</h1>
 
-<div class="ui inverted animated link list" id="user-name">
+<div class="ui inverted selection animated link list" id="user-name">
     <% @projects.each do |proj| %>
         <%= link_to proj.name, project_path(proj), class: "item"%>
     <% end %>
 </div>
 
 <div id="create">
-    <% if !session[:user_id] %>
+    <% if session[:user_id] %>
         <%= link_to "Create a new Project", new_project_path %>
     <% end %>
 </div>

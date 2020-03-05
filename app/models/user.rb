@@ -27,7 +27,11 @@ class User < ApplicationRecord
             hash[post.title] = post.post_favorites.count
         end
         arr = hash.max_by{|k,v| v}
-        arr[0]
+        if !arr.nil?
+            arr[0]
+        else
+            nil
+        end
     end
 
     def most_favorited_project
@@ -36,7 +40,11 @@ class User < ApplicationRecord
             hash[proj.name] = proj.project_favorites.count
         end
         arr = hash.max_by{|k,v| v}
-        arr[0]
+        if !arr.nil?
+            arr[0]
+        else
+            nil
+        end
     end
 
     def self.most_posts
