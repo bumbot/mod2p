@@ -10,7 +10,7 @@
 </div>
 
 <div id="create">
-    <% if !session[:user_id] %>
+    <% if session[:user_id] %>
         <%= link_to "Create a new Project", new_project_path %>
     <% end %>
 </div>
