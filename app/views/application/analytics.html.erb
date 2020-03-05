@@ -6,6 +6,8 @@
 <div>
     <h2> Users: </h2>
         <p>Number of Users: <%= User.all.count %></p>
+        <p>Users with 2 or fewer posts: <%= User.post_shame %> </p>
+        <p>Users with 2 or fewer project collaborations: <%= User.project_shame %></p>
         <%= link_to "View all Users", users_path %>
 </div>
 <div>

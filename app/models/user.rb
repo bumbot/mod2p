@@ -64,4 +64,25 @@ class User < ApplicationRecord
         arr = hash.max_by{|k,v| v}
         arr[0]
     end
+
+    def self.post_shame
+        arr = []
+        self.all.select do |user|
+            user.posts.count <= 2
+        end.each do |user|
+            arr << user.name
+        end
+        arr.join(", ")
+    end
+
+    def self.project_shame
+        arr = []
+        self.all.select do |user|
+            user.projects.count <= 2
+        end.each do |user|
+            arr << user.name
+        end
+        arr.join(", ")
+    end
+
 end
