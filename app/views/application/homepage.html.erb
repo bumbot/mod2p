@@ -5,6 +5,7 @@
     </div>
 
     <!-- profile card of 4 random users -->
+<% if !@profiles.empty? %>
 <div class="ui grid">
     <% @profiles.each do |profile| %>
             <div class="ui centered card" id="panels">
@@ -36,3 +37,4 @@
             </div>
     <% end %>
 </div>
+<% end %>
