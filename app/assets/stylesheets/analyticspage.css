@@ -1,6 +1,6 @@
 body {
     background-image: url('yikes.gif');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: fixed;
     font-size: 120%;

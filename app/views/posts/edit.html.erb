@@ -4,3 +4,6 @@
 
 <%= render 'form' %>
 
+<%= form_tag post_path(@post), method: :delete do %>
+    <%= submit_tag "Delete" %>
+<% end %>

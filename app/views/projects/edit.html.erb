@@ -3,3 +3,7 @@
 <h1>Edit <%= @project.name %></h1>
 
 <%= render 'form' %>
+
+<%= form_tag project_path(@project), method: :delete do %>
+    <%= submit_tag "Delete" %>
+<% end %>

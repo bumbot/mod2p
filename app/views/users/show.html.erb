@@ -3,6 +3,13 @@
 <div class="headings">
 <h1><%= @user.name %>'s Profile</h1>
 
+<% if @user.id == session[:user_id] %>
+    <div id="edit-user" class="ui mini button">
+    <%= link_to "Edit this User", edit_user_path(@user) %>
+    </div>
+<% end %>
+
+
 <h2>Name: <%= @user.name %></h2>
 <h2>GitHub Profile: <%= @user.github_profile %></h2>
 <h2>Flatiron Cohort Name: <%= @user.cohort_name %></h2>
@@ -59,10 +66,4 @@
             </li>
             <% end %>
         </ol>
-
-
-    <br>
-    <% if @user.id == session[:user_id] %>
-        <%= link_to "Edit this User", edit_user_path(@user) %>
-    <% end %>
 </div>
