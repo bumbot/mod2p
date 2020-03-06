@@ -1,0 +1,38 @@
+body {
+    background-image: url('project-background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+p.content {
+    text-align: left;
+    margin-left: 20%;
+    margin-right: 20%;
+    border: solid 2px black;
+    border-style: groove;
+    border-radius: 8px;
+    padding: 10px 20px 10px 20px;
+    font-size: 100%;
+}
+
+h1{
+    margin-left: 23%;
+}
+
+#sidebar {
+    right: 5%;
+    position: fixed;
+}
+
+.ul-box {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 60%;
+}
+
+.li-box {
+    width: 400px;
+    padding-left: 20px;
+}

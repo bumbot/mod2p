@@ -1,31 +1,38 @@
-<%= stylesheet_link_tag "homepage" %>
+<%= stylesheet_link_tag "project_showpage" %>
 
 <h1><%= @project.name %></h1>
 
 <h2>GitHub URL: <%= @project.github_url %></h2>
 
-<p><%= @project.description %></p>
+<div class="ui vertical buttons" id="sidebar">
+    <% if session[:user_id] %>
+    <div class="ui button">
+        <% fav = @project.project_favorites.find_by(user_id: session[:user_id], project_id: @project.id) %>
+            <% if fav %>
+                <%= button_to 'Unfavorite this Project', {:controller => "project_favorites", :action => "destroy", :project_id => @project.id} , :method=>:delete %>  
+            <% else %>
+                <%= button_to 'Favorite this Project', {:controller => "project_favorites", :action => "create", :project_id => @project.id} , :method=>:post  %>
+            <% end %>
+    </div>
+    <% end %>
+
+    
+        <% @project.users.each do |user| %>
+            <% if user.id == session[:user_id] %>
+            <div class="ui button">
+                <%= link_to "Edit this project", edit_project_path %>
+            </div>
+            <% end %>
+        <% end %>
+</div>
+
+<p class="content"><%= @project.description %></p>
 
 <h2>Collaborators:</h2>
-<ul>
+<ul class="ul-box">
     <% @project.users.each do |user| %>
-    <li>
+    <li class="li-box">
         <%= link_to user.name, user_path(user) %>
     </li>
     <% end %>
 </ul>
-
-<% if session[:user_id] %>
-    <% fav = @project.project_favorites.find_by(user_id: session[:user_id], project_id: @project.id) %>
-        <% if fav %>
-           <td><%= button_to 'Unfavorite this Project', {:controller => "project_favorites", :action => "destroy", :project_id => @project.id} , :method=>:delete %></td>      
-        <% else %>
-            <td><%= button_to 'Favorite this Project', {:controller => "project_favorites", :action => "create", :project_id => @project.id} , :method=>:post  %></td>
-        <% end %>
-<% end %>
-
-<% @project.users.each do |user| %>
-    <% if user.id == session[:user_id] %>
-        <%= link_to "Edit this project", edit_project_path %>
-    <% end %>
-<% end %>
