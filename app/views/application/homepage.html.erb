@@ -6,9 +6,8 @@
 
     <!-- profile card of 4 random users -->
 <div class="ui grid">
-    <% 4.times do %>
-            <div class="ui centered four card" id="panels">
-                <% profile = User.all.sample %>
+    <% @profiles.each do |profile| %>
+            <div class="ui centered card" id="panels">
                 <div class="content">
                 <div class="header"><%= profile.name %></div>
                 </div>

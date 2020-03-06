@@ -54,13 +54,14 @@
     
         <% if session[:user_id] %>
             <button class="ui labeled icon right floated button">
-                <i class="fas fa-user"></i>
-                <%= link_to "Hello #{current_user.name}!", user_path(current_user), class: "item" %>
-            </button>
-            <button class="ui labeled icon right floated button">
                 <i class="fas fa-sign-out-alt"></i>
                 <%= link_to "Logout", logout_path, class: "item" %>
             </button>
+            <button class="ui labeled icon right floated button">
+                <i class="fas fa-user"></i>
+                <%= link_to "Hello #{current_user.name}!", user_path(current_user), class: "item" %>
+            </button>
+            
         
         <% end %>
     </div>

@@ -2,20 +2,18 @@
 
 <h1>Website Analytics</h1>
 
-<div>
+<div class="analytics">
     <h2> Users: </h2>
         <p>Number of Users: <%= User.all.count %></p>
         <p>Users with 2 or fewer posts: <%= User.post_shame %> </p>
         <p>Users with 2 or fewer project collaborations: <%= User.project_shame %></p>
-</div>
-<div>
+<br>
     <h2> Posts: </h2>
         <p>Number of Posts: <%= Post.all.count %></p>
         <p>User with the most posts: <%= link_to User.most_posts.name, user_path(User.most_posts) %></p>
         <p>Most favorited post: <%= link_to Post.most_favorited.title, post_path(Post.most_favorited) %></p>
         <p>Total likes: <%= Post.total_favorites %></p>
-</div>
-<div>
+<br>
     <h2> Projects: </h2>
         <p>Number of Projects: <%= Project.all.count %></p>
         <p>User with the most projects: <%= link_to User.most_projects.name, user_path(User.most_projects) %></p>

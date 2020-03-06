@@ -1,15 +1,16 @@
 body {
     background-image: url('yikes.gif');
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-size: 150%;
-}
-
-p {
-
+    background-position: fixed;
+    font-size: 100%;
+    
 }
 
 h2 {
     text-align: initial;
+}
+
+.analytics {
+    text-indent: 20%
 }

@@ -10,4 +10,19 @@ class ApplicationController < ActionController::Base
 
         return @current_user
     end
+
+    def homepage
+        @profiles = []
+        
+        if User.all.length < 4
+            User.all.each{|user| @profiles << user}
+        else
+            while @profiles.length < 4 do
+                user = User.all.sample
+                if !@profiles.include?(user)
+                    @profiles << user
+                end
+            end
+        end
+    end
 end
