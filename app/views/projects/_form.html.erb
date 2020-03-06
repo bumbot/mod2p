@@ -18,16 +18,26 @@
 
 <div class="labels">
     <%= form_for @project do |u| %>
+        <div class="form-text">
         <%= u.label :name %>
+        <br>
         <%= u.text_field :name %>
-        <div>
+        </div>
+        <div class="form-text">
         <%= u.label :github_url %>
+        <br>
         <%= u.text_field :github_url %>
         </div>
-        <div>
+        <div class="form-text">
         <%= u.label :description %>
-        <%= u.text_field :description %>
+        <br>
+        <%= u.text_area :description, :cols => 20, :rows => 10 %>
         </div>
+        <br>
         <%= u.submit %>
     <% end %>
 </div>
+
+<%= form_tag project_path(@project), method: :delete do %>
+    <%= submit_tag "Delete" %>
+<% end %>

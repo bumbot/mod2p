@@ -17,13 +17,21 @@
 
 <div class="labels">
     <%= form_for @post do |u| %>
+        <div class="form-text">
         <%= u.label :title %>
+        <br>
         <%= u.text_field :title %>
-        <div>
-        <%= u.label :content %>
-        <%= u.text_field :content %>
         </div>
+        <div class="form-text">
+        <%= u.label :content %>
+        <br>
+        <%= u.text_area :content, :cols => 50, :rows => 10 %>
+        </div>
+        <br>
         <%= u.submit %>
     <% end %>
 </div>
 
+<%= form_tag post_path(@post), method: :delete do %>
+    <%= submit_tag "Delete" %>
+<% end %>
