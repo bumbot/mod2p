@@ -1,5 +1,7 @@
 body {
     font-family: Verdana, Tahoma, sans-serif;
+    color: white;
+    text-shadow: 2px 2px black;
 }
 
 /*
@@ -11,6 +13,7 @@ body {
     margin-top: 1%;
     position: fixed;
     z-index: 10;
+    text-shadow: initial;
 }
 
 /*

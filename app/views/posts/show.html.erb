@@ -5,7 +5,7 @@
 <h2><%= link_to @post.user.name, user_path(@post.user)%></h2>
 
 
-    <p><%= @post.content %></p>
+    <p class="content"><%= @post.content %></p>
 
     <div class="ui right floated vertical buttons">
         <% if session[:user_id] %>

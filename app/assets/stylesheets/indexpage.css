@@ -10,7 +10,6 @@ h1 {
 }
 
 #user-name a{
-    font-size: 150%;
     color: rgb(85, 85, 88);
     text-indent: 15%;
     font-weight: bold;
@@ -20,5 +19,4 @@ h1 {
 #create {
     padding-top: 5%;
     text-align: center;
-    font-size: 150%;
 }

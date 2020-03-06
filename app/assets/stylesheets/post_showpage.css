@@ -9,7 +9,7 @@ h1, h2 {
     text-align: center !important;
 }
 
-p {
+p.content {
     text-indent: 10%;
     margin-left: 20%;
     margin-right: 20%;
@@ -17,8 +17,6 @@ p {
     border-style: groove;
     border-radius: 8px;
     padding: 10px 20px 10px 20px;
-    color: white;
-    text-shadow: 2px 2px black;
     font-size: 150%;
 }
 
