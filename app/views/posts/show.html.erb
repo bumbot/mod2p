@@ -4,10 +4,7 @@
 
 <h2><%= link_to @post.user.name, user_path(@post.user)%></h2>
 
-
-    <p class="content"><%= @post.content %></p>
-
-    <div class="ui right floated vertical buttons">
+    <div class="ui vertical buttons" id="sidebar">
         <% if session[:user_id] %>
         <div class="ui button">
             <% fav = @post.post_favorites.find_by(user_id: session[:user_id], post_id: @post.id) %>
@@ -21,8 +18,11 @@
 
         
         <% if @post.user.id == session[:user_id] %>
-            <div class="ui button"></div>
+            <div class="ui button">
             <%= link_to "Edit this post", edit_post_path %>
             </div>
         <% end %>
     </div>
+
+    <p class="content"><%= @post.content %></p>
+
