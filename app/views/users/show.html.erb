@@ -1,12 +1,13 @@
 <%= stylesheet_link_tag "user_showpage" %>
-<%= render 'application/menu' %>
 
+<div class="headings">
 <h1><%= @user.name %>'s Profile</h1>
 
 <h2>Name: <%= @user.name %></h2>
 <h2>GitHub Profile: <%= @user.github_profile %></h2>
 <h2>Flatiron Cohort Name: <%= @user.cohort_name %></h2>
 <h2>Cohort Start Date: <%= @user.cohort_start %></h2>
+</div>
 
 <div class="booty">
     <h3>Number of Posts Authored: <%= @user_posts.length %></h3>
@@ -42,7 +43,7 @@
             <% arr = [] %> 
             <% @user.post_favorites.each do |fav| %>
             <li class="li-box">
-                <%= fav.post.title %>
+                <%= link_to fav.post.title, post_path(fav.post) %>
             </li>
             <% end %>
         <%# <% end %>
@@ -54,15 +55,12 @@
         <ol class="ol-box">
             <% @user.project_favorites.each do |fav| %>
             <li class="li-box">
-                <%= fav.project.name %>
+                <%= link_to fav.project.name, project_path(fav.project) %>
             </li>
             <% end %>
         </ol>
 
 
-    <br>
-
-    <%= link_to "Back to User Index", users_path %>
     <br>
     <% if @user.id == session[:user_id] %>
         <%= link_to "Edit this User", edit_user_path(@user) %>

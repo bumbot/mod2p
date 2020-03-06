@@ -5,6 +5,10 @@ body {
     background-attachment: fixed;
 }
 
+.headings {
+    margin-top: 10%;
+}
+
 .booty {
     font-size: 150%;
     /* text-indent: 200px; */
